@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" ></script>
+		<script type=""text/javascript" >
+			
+			function include(file) {
+				
+				var idString = '#' + file.substring(0, file.lastIndexOf("."));
+				idString = idString.replace('/', '-');
+				alert(idString);
+				
+				$(idString).load(file); 
+				
+			}
+			
+			$(function(){
+				
+				include("index.html");
+				include("Staff/index.html");
+				
+			});
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="index"></div>
+		<div id="Staff-index"></div>
+	</body>
+
+</html>
