@@ -1,0 +1,251 @@
+<p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+var finished = true;// Whether or not the toggle animation is done
+var visibleTab = "#out1";	// Default tab
+//var bioVisible = false;
+var visibleBio = "";
+
+function reset() {
+// Resets bios
+	$(".bios").hide();
+	$(".out_items").css("width","auto");
+	$(".out_items").css("height","auto");
+	//alert("bios are now hidden");
+	$(".out_items").show();
+	visibleBio = "";
+}
+
+function showTab( tab ) {
+// Show the specified tab
+	if ( tab != visibleTab ) {
+		finished = false;
+		$(visibleTab).slideToggle(400,function(){
+			finished = true;
+		}); 
+		finished = false;
+		$(tab).slideToggle(400,function(){
+			finished = true;
+			visibleTab = tab;
+		});
+	}
+}
+
+function showBio( bio ) {
+// Show specified bio
+	parent = bio + "-item";
+	bio += "-bio";
+	//alert(bio + " " + visibleBio);
+	if ( bio != "-bio" && bio != visibleBio ) {
+		//alert(bio + " " + parent);
+		$(".out_items").hide();
+		$(".out_items").css("width","400px");
+		$(".out_items").css("height","300px");
+		$(parent).show();
+		finished = false;
+		if (visibleBio != "") {
+			$(visibleBio).slideToggle(400,function(){
+				$(bio).slideToggle(400, function(){
+					visibleBio = bio;
+					finished = true;
+				});
+			});
+		}
+		else {
+			$(bio).slideToggle(400, function(){
+				visibleBio = bio;
+				finished = true;
+			});		
+		}
+	} else if (bio == visibleBio) reset();
+}
+
+$(document).ready(function(){
+	$(visibleTab).slideToggle();
+	//alert(bio + " " + visibleBio);
+	showBio( visibleBio );
+	$("#one").click(function(){if ( finished ) /*visibleTab == "#out1" ? reset() :*/ showTab("#out1" );});
+	//$("#two").click(function(){if ( finished ) showTab("#out3" );});	
+	$("#three").click(function(){if ( finished ) showTab("#out2" );});
+	//$("#nagdas").click(function(){if ( finished ) showBio("#nagdas");});
+	//$("#marshburn").click(function(){if ( finished ) showBio("#marshburn");});
+	//$("#mcelveen").click(function(){if ( finished ) showBio("#mcelveen");});
+	$("div.twelvecolheader h1").html("Research Office and Technology Transfer");
+});
+// ]]></script>
+</p>
+<style><!--
+.link, .links2 {
+		display: block;
+		color: #e0e2e4 !important;
+		width: 250px;
+		padding: 5px 20px;
+		margin: none;
+		margin-bottom: 1px;
+		text-decoration: none;
+		text-align: center;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		background: -moz-linear-gradient(right top, #02549e, #027AAe); 
+		background: linear-gradient(to right top, #02549e , #027AAe); 
+	}
+	.links2 {
+		border: 1px outset #000000;
+		width: 128px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.link:hover, .links2:hover {
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		background: -moz-linear-gradient(left top, #02549e, #027AAe); 
+		background: linear-gradient(to left top, #02549e , #027AAe); 
+	}
+	.links2:hover {
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		border: 1px inset #000000;
+	}
+	#container {
+		display: block;
+		float: left;
+		margin: 10px;
+		width: auto;
+		height: 530px;
+	}
+	#out1, #out2, #out3 {
+		display: none;
+		float: left;
+		width: 480px;
+		margin: 10px;
+		padding: 10px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+	/*#out1 {height: 530px; }*/
+	#out2 {height: 530px;overflow: scroll;}
+	div.out_items {
+		display: block;
+		float: left;
+		align: center;
+		width: 200px;
+		height: 350px;
+		/*padding: 20px;*/
+		/*background-color: F9FFFC;*/
+		margin: 0px 10px 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	div.out_items img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	span.department {
+		font-size: 10px;
+	}
+	span.emph {
+		font-weight: bold;
+		font-style: italic;
+	}
+	/* Table */
+	table.projects {
+		width: 500px;
+	}
+	table.projects, th.projects, td.projects {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	td.projects, th.projects {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	td.projects p {
+		font-size: 10px;
+	}
+	p.bios {
+		/*display: none;*/
+	}
+	#bounding {
+		width: 846px;
+		height: 1600px;
+	}
+--></style>
+<div id="bounding">
+<div id="container">
+	<a class="link" href="javascript:;" id="one">On Going Research and Development</a>
+	<a class="link" href="x10752.xml" id="two">Funded Projects</a>
+	<a class="link" href="javascript:;" id="three">Scholarly Publications</a>
+	<a class="link" href="x10374.xml" id="four">Back to Main</a>
+</div>
+<div id="out1">
+	<div class="out_container" id="profiles">
+		<div class="out_items"id="nagdas-item">
+			<img height="60px" src="Images/Research/Agriculture Initiatives/nagdas-headshot.png" width="48px" />
+			<a class="links2" href="javascript:;" id="nagdas">Subir Nagdas<br />
+				<span class="department">(Chemistry and Physics)</span> 
+			</a>
+			<p id="nagdas-bio" class="bios">The research of Dr. Subir Nagdas of the Department of Chemistry and Physics 
+			focuses on reproductive biology of mammals, including signal transduction 
+			pathways regulating sperm function, the role of sperm acrosome in fertilization 
+			and the role of the epididymis in maintaining sperm viability.</p>
+		</div>
+		<div class="out_items" id="mcelveen-item">
+			<img height="60px" src="Images/Research/Agriculture Initiatives/mcelveen-headshot.png" width="48px" />
+			<a id="mcelveen" class="links2" href="javascript:;">Greg McElveen<br />
+				<span class="department">Assistant Dean for Strategic Initiatives - School of Business and Economics</span> 
+			</a>
+			<p id="mcelveen-bio" class="bios">Greg McElveen the Assistant Dean for Strategic Initiatives in the School of 
+			the Business and Economics is involved in a research collaboration with local hog farmers to design a more 
+			effective method of converting hog waste to energy.</p>
+		</div>
+		<div class="out_items" id="marshburn-item">
+			<img height="60px" src="Images/Research/Agriculture Initiatives/marshburn-headshot-new.png" width="48px" />
+			<a id="marshburn" class="links2" href="javascript:;">Milton "Johnnie" Marshburn<br />
+				<span class="department">Regional Director, Small Business Technology & Development Center (SBTDC)</span>
+			</a>
+			<p id="marshburn-bio" class="bios">Milton "Johnnie" Marshburn,  the Regional Director of the Small Business 
+			Technology and Development Center at FSU is actively involved in aquaculture research.</p>
+		</div>
+	</div>
+</div>
+<div id="out2">
+	<div class="out_container">
+		<h3>Journal Articles</h3>
+		<p><span class="emph">Subir K Nagdas</span>, Teresa Buchanan, Shaina McCaskill, Jared Mackey, George E Alvarez, and Samir Raychoudhury.  Isolation of a calcium-binding protein of the acrosomal membrane of bovine spermatozoa. The International Journal of Biochemistry and Cell Biology 45 (2013) 876- 884.</p>
+		<p>Identification of acrosomal matrix-specific hydrolases binding proteins of bovine cauda epididymal spermatozoa.  <span class="emph">Subir K Nagdas</span>, Shatasha Hamilton, and Samirsubas Raychoudhury.  Journal of Andrology 31, 177-187, 2010.</p>
+		<p>Olson, G.E., Winfrey, V.P., NagDas, S.K., Hill, K.E., and Burk, R.F.  Apolipoprotein E receptor 2 mediates selenium uptake from Selenoprotein P by the mouse testis.  J.Biol.Chem, April 20, 282 (16), 12290-12297, 2007.</p>
+		<p><span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey, and Gary E. Olson.  Identification of hamster sperm 26kDa dehdrogenase/reductase that is exclusively present in the mitochondria of the flagellum.  Biol. Reprod. 75, 197-202, 2006.</p>
+		<p>Michael H. Melner, Arthur L. Haas, Jennifer M. Klein, Alan R. Brash, William E. Boeglin, <span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey and Gary E. Olson.  Demonstration of ubiquitin  thiolester formation of UBE2Q2 (UBCi), a novel ubiquitin-conjugating enzyme with implantation site-specific expression. , 2006, Biol. Reprod. 75, 395-406, 2006.</p>
+		<p>Gary E. Olson , Virginia P. Winfrey, <span class="emph">Subir K. NagDas</span>, Kristina E. Hill and Raymond F. Burk.  Selenoprotein P is required for mouse sperm development. Biol. Reprod. 73, 201-11, 2005.</p>
+		<p><span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey and Gary E. Olson.  Tyrosine phosphorylation generates multiple isoforms of the mitochondrial capsule protein, phospholipid hydroperoxide glutathione peroxidase (PHGPx), during hamster sperm capacitation.  Biol. Reprod, 72, 164-171, 2005.</p>
+		<p>Gary E. Olson, Virginia P. Winfrey, Ming Bi, Daniel M. Hardy and <span class="emph">Subir K. NagDas</span>.  Assembly of Zonadhesin into the hamster sperm acrosomal matrix involves distinct targeting strategies during spermiogenesis and maturation in the epididymis.  Biol. Reprod. 71, 1128-1134, 2004.</p>
+		<p>Gary E. Olson, Virginia P. Winfrey, <span class="emph">Subir K. NagDas</span> and Michael H. Melner.  Region specific expression and secretion of the fibrinogen-related protein, fgl2, by epithelial cells of the hamster epididymis and its role in disposal of defective spermatozoa.  J. Biol. Chem. 279, 51266-51274, 2004 .</p>
+		<p>Gary E. Olson, Virginia P. Winfrey and <span class="emph">Subir K. NagDas</span>.  Structural modification of the hamster sperm acrosome during post-testicular development in the epididymis.  Microscopy Research Techniques 61, 46-55, 2003.</p>
+		<p><span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey and Gary E. Olson.  Identification of Ras and its downstream signaling elements and their potential role in hamster sperm motility. Biol. Reprod. 67, 1058-1066, 2002.</p>
+		<p><span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey and Gary E. Olson,  Identification of a region specific epididymal secretory glycoprotein which specifically binds nonviable luminal spermatozoa.  Biol. Reprod.  63, 1428-1436, 2000.</p>
+		<p>Gary E. Olson, Virginia P. Winfrey and <span class="emph">Subir K. NagDas</span>.  Acrosome biogenesis in the hamster: ultrastructurally distinct matrix regions are assembled from a common precursor polypeptide.  Biol. Reprod. 58, 361 370, 1998.</p>
+		<p>Gary E. Olson, Virginia P. Winfrey, John C. Neff, Thomas J. Lukas and <span class="emph">Subir K. NagDas</span>.  A related polypeptide family is a major structural constituent of a stable acrosomal matrix assembly in bovine spermatozoa.  Biol. Reprod. 57, 325 334, 1997.</p>
+		<p>Gary E. Olson, <span class="emph">Subir K. NagDas</span> and Virginia P. Winfrey Temporal expression and localization of protein farnesyltransferase during spermiogenesis and post testicular sperm maturation in the hamster.  Molecular Reproduction and Development, 48, 71 76, 1997.</p>
+		<p><span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey and Gary E. Olson.  Proacrosin acrosomal matrix binding interactions in ejaculated bovine spermatozoa.  Biol. Reprod., 54, 111 121, 1996.</p>
+		<p><span class="emph">Subir K. NagDas</span>, Virginia P. Winfrey and Gary E. Olson.  Identification of hydrolase binding activities of the acrosomal matrix of hamster spermatozoa. Biol. Reprod., 55, 1405 1414, 1996.</p>
+		<p><span class="emph">S.K. NagDas</span>, M.D. Skudlarek, M. C. Orgebin Crist, and D.R.P. Tulsiani, Biochemical alterations in the proaocrosin acrosin system during epididymal maturation of the rat spermatozoa. J. Androl. 13, 36 43, 1992.</p>
+		<h3>Reviews</h3>
+		<p>Orgebin Crist, M. C., <span class="emph">NagDas, S.K.</span>, and Tulsiani, D.R.P.  Modifications of putative sperm binding proteins for the zona pellucida during sperm maturation.   International Symposium on Cell and Molecular Biology of the Testis, Ares Serono Symposia Publications, Majorea, Spain, 1994.  Frontiers in Endocrinology, (Dufau, M.L., Fabbri, A. and Isidori, A. eds.) Vol.5, pp 211 216</p>
+		<p>Gary E. Olson, <span class="emph">Subir K. NagDas</span> and Virginia P. Winfrey.  Structural differentiation of spermatozoa during post-testicular maturation.  The Epididymis (Robaire, B. and Hinton, B. eds.) Plenum Publishing Company, 2001.</p>
+	</div>
+</div>
+<div id="out3">
+
+</div>
+</div>

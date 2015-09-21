@@ -1,0 +1,255 @@
+<p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+var finished = true;// Whether or not the toggle animation is done
+var bio = false;	// Whether or not a bio is visible
+
+function reset() {
+// Resets page to initial state
+	$(".bio-space").hide();
+	$(".out_items").css("width","188px");
+	$(".out_items").css("height","300px");
+	$(".out_items").show();
+	bio = false;
+}
+
+function showBio( bio2 ) {
+// Show the specified bio
+	$(".bio-space").hide();
+	$(".out_items").hide();
+	$(".out_items").css("width","400px");
+	$(".out_items").css("height","auto");
+	$(bio2).parents(".out_items").show();
+	finished = false;
+	$(bio2).slideToggle(400,function(){
+		finished = true;
+		bio = true;
+	});
+}
+
+$(document).ready(function(){			
+	$("#ila").click(function(){if ( finished ) bio ? reset() : showBio("#ila-bio" );});
+	$("#evelyn").click(function(){if ( finished ) bio ? reset() : showBio("#evelyn-bio" );});	
+	$("#dudley").click(function(){if ( finished ) bio ? reset() : showBio("#dudley-bio" );});	
+	$("#hodges").click(function(){if ( finished ) bio ? reset() : showBio("#hodges-bio" );});	
+	$("#padilla").click(function(){if ( finished ) bio ? reset() : showBio("#padilla-bio" );});	
+	$("#harris").click(function(){if ( finished ) bio ? reset() : showBio("#harris-bio" );});	
+	$("#mendez").click(function(){if ( finished ) bio ? reset() : showBio("#mendez-bio" );});	
+	$(".back-button").click(function(){reset();});
+});
+// ]]></script>
+</p>
+<style><!--
+.link:link, .link:visited {
+		display: block;
+		color: #e0e2e4;
+		width: 130px;
+		padding: 5px 20px;
+		margin-left: auto;
+		margin-right: auto;
+		text-decoration: none;
+		text-align: center;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		background: -moz-linear-gradient(left top, #02549e, #027AAe); 
+		background: -ms-linear-gradient(left top, #02549e, #027AAe); 
+		background: linear-gradient(to left top, #02549e , #027AAe); 
+	}
+	.link:hover {
+		display: block;
+		color: #e0e2e4;
+		text-decoration: none;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		background: -moz-linear-gradient(right bottom, #02549e, #027AAe); 
+		background: linear-gradient(to right bottom, #02549e , #027AAe); 
+	}
+	#out_container {
+		display: block;
+		/*background-color: #DDC7A5;*/
+		float: left;
+		width: 750px;
+		height: 1200px;
+		padding: 20px;
+		/*-moz-border-radius: 20px;*/
+		/*border-radius: 20px;*/
+		overflow: hidden;
+	}
+	.out_items {
+		display: block;
+		float: left;
+		width: 188px;
+		height: 300px;
+		/*background-color: F9FFFC;*/
+		margin: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		padding: 20px;
+		border: 1px outset #000000;
+		background-color: #f1f1f1;
+	}
+	.out_items img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.department {
+		font-size: 10px;
+	}
+	.emph {
+		font-weight: bold;
+		font-style: italic;
+	}
+	div.department {
+		font-size: 14px;
+	}
+	div.bio-space {
+		display: none;
+	}
+	a.back-button {
+		background-color: #02549e;
+		text-decoration: none;
+		color: #e0e2e4;
+		font-size: 18px;
+		padding: 5px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	a.back-button:hover {
+		text-decoration: underline;
+	}
+	div.out-items-content {
+		display: block;
+		float: left;
+		width: 190px;
+		height: 300px;
+	}
+--></style>
+<div id="out_container">
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" />
+		<a class="link" href="javascript:;" id="ila">Dr. Ila<br />
+			<span class="department">(Associate Vice Chancellor for Research and Technology Transfer Officer)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="ila-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" /> 
+		<a class="link" href="javascript:;" id="evelyn">Dr. Evelyn<br />
+			<span class="department">(Biological Science)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="evelyn-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" />
+		<a class="link" href="javascript:;" id="dudley">Mrs. Dudley<br />
+			<span class="department">(Biological Science)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="dudley-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" />
+		<a class="link" href="javascript:;" id="hodges">Dr. Dwayne Hodges<br />
+			<span class="department">(Research Office)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="hodges-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" />
+		<a class="link" href="javascript:;" id="padilla">Dr. Carla Padilla<br />
+			<span class="department">(Research Office)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="padilla-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" />
+		<a class="link" href="javascript:;" id="harris">Mrs. Harris<br />
+			<span class="department">(Research Office)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="harris-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+	<div class="out_items">
+		<img height="144px" src="Images/Research/Staff/Ila.png" width="144px" />
+		<a class="link" href="javascript:;" id="mendez">Mrs. Mendez<br />
+			<span class="department">(Research Office)</span>
+		</a>
+		<div class="department">
+			<br />Email: <a href="mailto:dila@uncfsu.edu">dila@uncfsu.edu</a>
+			<br />Phone: (910)672-2417
+			<br />LSA 320
+		</div>
+		<div class="bio-space" id="mendez-bio">
+			<br />
+			<a class="back-button" href="javascript:;">Back</a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+		</div>
+	</div>
+</div>

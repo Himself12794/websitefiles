@@ -1,0 +1,375 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script>
+var finished = true;		// Whether or not the toggle animation is done. Setting to false prevents any buttons from being pressed.
+var visibleTab = "#one-out";	// Default tab
+var visibleBio;
+
+function reset() {
+// Resets bios
+	$("p.bios").hide();
+	$("div.out_items").css("width","auto");
+	$("div.out_items").css("height","auto");
+	$("div.out_items").show();
+	visibleBio = "";
+}
+
+function showTab( tab ) {
+// Show the specified tab
+	if ( tab != visibleTab ) {
+		finished = false;
+		$(visibleTab).slideToggle(400,function(){
+			finished = true;
+		}); 
+		finished = false;
+		$(tab).slideToggle(400,function(){
+			finished = true;
+			visibleTab = tab;
+		});
+	}
+}
+
+function showBio( bio ) {
+	if (bio == "" || bio == visibleBio) {
+		reset();
+	} else {
+		$("div.out_items").hide();
+		$("div.out_items").css("width","parent");
+		$("div.out_items").css("height","parent");
+		$(bio).show();
+		finished = false;
+		$(bio).children("p.bios").slideToggle(400,function(){
+			visibleBio = bio;
+			finished = true;
+		});
+	}
+}
+	$(document).ready(function(){
+		$(visibleTab).slideToggle();
+		/*showBio( visibleBio );*/
+		$("#one").click(function(){if ( finished ) /*visibleTab == "#out1" ? reset() :*/ showTab("#one-out" );});
+		//$("#two").click(function(){if ( finished ) showTab("#out2" );});	
+		//$("#three").click(function(){if ( finished ) showTab("#out3" );});
+		$("#three").click(function(){if ( finished ) showTab("#two-out" );});
+		$("div.twelvecolheader h1").html("Research Office and Technology Transfer");
+	});
+</script>
+<style><!--
+.link, .links2 {
+		display: block;
+		color: #e0e2e4 !important;
+		width: 250px;
+		padding: 5px 20px;
+		margin: none;
+		margin-bottom: 1px;
+		text-decoration: none;
+		text-align: center;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		background: -moz-linear-gradient(right top, #02549e, #027AAe); 
+		background: linear-gradient(to right top, #02549e , #027AAe); 
+	}
+	.links2 {
+		border: 1px outset #000000;
+		width: 128px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.link:hover, .links2:hover {
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		background: -moz-linear-gradient(left top, #02549e, #027AAe); 
+		background: linear-gradient(to left top, #02549e , #027AAe); 
+	}
+	.links2:hover {
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		border: 1px inset #000000;
+	}
+	#container {
+		display: block;
+		float: left;
+		margin: 10px;
+		width: auto;
+		height: 530px;
+	}
+	#one-out, #two-out, #three-out {
+		display: none;
+		float: left;
+		width: 480px;
+		margin: 10px;
+		padding: 10px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+	/*#out1 {height: 530px; }*/
+	#two-out {height: 530px;overflow: scroll;}
+	div.out_items {
+		display: block;
+		float: left;
+		align: center;
+		width: 200px;
+		height: 350px;
+		/*padding: 20px;*/
+		/*background-color: F9FFFC;*/
+		margin: 0px 10px 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	div.out_items img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	span.department {
+		font-size: 10px;
+	}
+	span.emph {
+		font-weight: bold;
+		font-style: italic;
+	}
+	
+	/* Table */
+	table.projects {
+		width: 500px;
+	}
+	table.projects, th.projects, td.projects {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	td.projects, th.projects {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	td.projects p {
+		font-size: 10px;
+	}
+	p.bios {
+		/*display: none;*/
+	}
+	#bounding {
+		width: 846px;
+		height: 1600px;
+	}
+--></style>
+<div id="container">
+	<a class="link button multi-button" href="javascript:;" id="one">On Going Research and Development</a>
+	<a class="link" href="x10699.xml" id="two">Funded Projects</a>
+	<a class="link button" href="javascript:;" id="three">Scholarly Publications</a>
+	<a class="link" href="x10374.xml" id="three">Back to Main</a>
+</div>
+<div id="one-out">
+	<div class="out_items">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/Chao-headshot.jpg" width="48px" />
+		<a class="links2" href="javascript:;">Shirley L. Chao<br />
+			<span class="department">(Biological Science)</span>
+		</a>
+		<p class="bios">The research of Dr. Shirley Chao of the Department of Biological Sciences focuses on 
+		agricultural pesticides and toxicity. She has recently developed a patent pending "green"
+		pesticide that is useful on the storage of grains.</p>
+	</div>
+	<div class="out_items">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/Prof-Kassem.JPG" width="48px" />
+		<a class="links2" href="javascript:;">Abdelmajid Kassem<br />
+			<span class="department">(Biological Science)</span>
+		</a>
+		<p class="bios">Dr. Abdelmajid Kassem is the Chair of the Department of Biological Sciences.  His research 
+		focuses on plant genetics and genomics and genetic and QTL mapping of important agronomic traits in major crops.
+		</p>
+	</div>
+	<div class="out_items">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/ila-headshot.png" width="48px" />
+		<a class="links2" href="javascript:;">Daryush Ila<br />
+			<span class="department">(Research Office)</span>
+		</a>
+		<p class="bios">Dr. Daryush ILA, the Associate Vice Chancellor for Research at Fayetteville State University,
+		holds an M.S. in Nuclear Physics and a PhD in Condensed Matter Physics.  He has recently 
+		focused his research in the area of producing agricultural crops in the desert, through a trade 
+		secret method referred to as "tiles".</p>
+	</div>	
+	<div class="out_items">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/zhu-headshot.png" width="48px" />
+		<a class="links2" href="javascript:;">Lieceng Zhu<br />
+			<span class="department">(Biological Science)</span>
+		</a>
+		<p class="bios">
+		<em><b>Impact of environmental stress on the resistance of plant-parasite interaction</b></em><br />
+		The goal of my research is to investigate, at molecular level, the role of environmental stress in 
+		responses of host plants to parasitic attacks. We use wheat-Hessian fly as a model system to	 
+		determine the impacts of heat stress on metabolism of wheat plants infested by Hessian fly. The 
+		findings from our research will enhance our understanding of the mechanism of loss of resistance
+		in wheat to Hessian fly and the vulnerability of plant resistance to parasite in the context of 
+		environmental stress and climate change.</p>
+	</div>
+	<div class="out_items">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/padilla-headshot-new.png" width="48px" />
+		<a class="links2" href="javascript:;">Carla Padilla<br />
+			<span class="department">(Research Office)</span>
+		</a>
+		<p class="bios">Dr. Carla Padilla of the Research Office is currently investigating cost-effective, reduced-water 
+		methods to grow agricultural crops in the desert, using locally occurring minerals and 
+		topography.</p>
+	</div>
+</div>
+<div id="two-out">
+<div class="out_container">
+<h3>Journal Articles</h3>
+<p>Akond A, S Liu, SK Kantartzi, K Meksem, N Bellaloui, DA Lightfoot, J Yuan, D Wang, J Anderson, DA Lightfoot, and <span class="emph">MA Kassem</span>. A SNP Genetic Linkage Map Based on the 'Hamilton' by 'Spencer' Recombinant Inbred Line (RIL) Population of Soybean [Glycine max (L.) Merr.] Identified QTL for Seed Isoflavone Contents. Molecular Breeding, 2015. Submitted.</p>
+<p>Bellaloui N, L Khandaker, M Akond, SK Kantartzi, K Meksem, A Mengistu, and <span class="emph">MA Kassem</span>. Identification of QTLs Underlying Seed Micronutrients Accumulation in 'MD96-5722' by 'Spencer' Recombinant Inbred Lines of Soybean. Atlas Journal of Biology, 2015 Submitted.</p>
+<p>Bellaloui N, L Khandaker, M Akond, SK Kantartzi, K Meksem, A Mengistu, DA Lightfoot, and <span class="emph">MA Kassem</span>. Genetic Mapping of QTLs Associated with Seed Macronutrients Accumulation in 'MD96-5722' by 'Spencer' Recombinant Inbred Lines of Soybean. Atlas Journal of Plant Biology, 2015 Submitted.</p>
+<p>Khandaker L, M Akond, S Liu, SK Kantartzi, K Meksem, N Bellaloui, DA Lightfoot and <span class="emph">MA Kassem</span>. Seed Amino Acids QTL Detected by SNP Markers in the MD 96-5722 by 'Spencer' RIL Population of Soybean. Frontiers in Plant Sciences, 2015. Submitted.</p>
+<p>Akond M, SK Kantartzi, K Meksem, N Bellaloui, DA Lightfoot, and <span class="emph">MA Kassem</span>. Quantitative Trait Loci (QTL) Underlying Seed Sucrose, Raffinose and Stachyose Contents in the MD 96-5722 by 'Spencer' Recombinant Inbred Line (RIL) Population of Soybean. Food and Nutrition Sciences, 2015. In Press.</p>
+<p>Ragin B, M Akond, SK Kantartzi, K Meksem, <span class="emph">H Herrera</span>, C Akbay, DA Lightfoot, and <span class="emph">MA Kassem</span>. Effect of Row Spacing on Seed Isoflavone Contents in Soybean [Glycine max (L.) Merr.]. American Journal of Plant Sciences, 5 (26): 4003-4010, December 2014.</p>
+<p>Anderson J, M Akond, J. Bond, <span class="emph">MA Kassem</span>, K Meksem, and SK Kantartzi. Quantitative Trait Loci Underlying Resistance to Sudden Death Syndrome (SDS) in MD96-5277 by 'Spencer' Recombinant Inbred Line (RIL) Population of Soybean. 3 Biotech, April 30, 2014.<br /> doi: 10.1007/s13205-014-0211-3.</p>
+<p>Kassem MA, L Ramos, D Hyten, J Bond, A Bendahmane, PR Arelli, VN Njiti, S Cianzio, SK Kantartzi, and K Meksem. Quantitative Trait Loci that Underlie SCN Resistance in Soybean [Glycine max (L.) Merr.] PI438489B by 'Hamilton' Recombinant Inbred Line Population. Atlas Journal of Plant Biology 1 (3): 29-38, 2014.</p>
+<p>Bellaloui N, A Mengistu, LHS Zobiole, HK Abbas, and <span class="emph">MA Kassem</span>. Soybean Seed Phenolics, Sugars, and Minerals are Altered by Charcoal Rot Infection in MG III Soybean Cultivars. Journal Food and Nutrition Sciences 5: 1843-1859, 2014.</p>
+<p>Akond M, S Liu, SK Kantartzi, K Meksem, N Bellaloui, DA Lightfoot, J Yuan, D Wang, and <span class="emph">MA Kassem</span>. Quantitative Trait Loci for Seed Isoflavone Contents in MD96-5722 by 'Spencer' Recombinant Inbred Lines of Soybean. Journal Agriculatural Food Chem 62: 1464-1468, February 2014.</p>
+<p>Akond M, S Liu, <span class="emph">M Boney</span>, SK Kantartzi, K Meksem, N Bellaloui, DA Lightfoot, and <span class="emph">MA Kassem</span>. Identification of Quantitative Trait Loci (QTL) Underlying Protein, Oil, and Five Major Fatty Acids' Contents in Soybean. American Journal of Plant Sciences 5 (1): 158-167, January 2014.</p>
+<p>Akond A, S Liu, <span class="emph">L Schoener</span>, JA Anderson, SK Kantartzi, K Meksem, Q Song, D Wang, Z Wen, DA Lightfoot, and <span class="emph">MA Kassem</span>. A SNP-Based Genetic Linkage Map of Soybean Using the SoySNP6K Illumina Infinium BeadChip Genotyping Array. Plant Genetics, Genomics, and Biotechnology 1 (3): 80-89, Nov. 2013.</p>
+<p>Akond M, <span class="emph">R Bazelle</span>, <span class="emph">B Ragin</span>, <span class="emph">H Herrera</span>, <span class="emph">U Kaodi</span>, C Akbay, SK Kantartzi, V Njiti, A Barakat, K Meksem, DA Lightfoot, and <span class="emph">MA Kassem</span>. Additional Quantitative Trait Loci and Candidate Genes for Seed Isoflavone Content in Soybean. J. Agricultural Science 5 (11): 20-33, October 2013.</p>
+<p>Bellaloui N, A Mengistu, and <span class="emph">MA Kassem</span>. Effects of Genetics and Environment on Fatty Acid Stability in Soybean Seed. Food and Nutrition Sciences 4 (9A1): 165&ndash;175, September 2013.</p>
+<p>Bellaloui N, Y Hu, A Mengistu, <span class="emph">MA Kassem</span>, and CA Abel. Effects of foliar boron application on seed composition, cell wall boron, and seed &delta;15N and &delta; 13C isotopes in water-stressed soybean plants. Frontiers in Plant Science, Plant Nutrition, Article 270: 1-12, 2013.</p>
+<p>Akond M, <span class="emph">B Ragin</span>, R Bazzelle, <span class="emph">W Clark</span>, SK Kantartzi, K Meksem, and <span class="emph">MA Kassem</span>. Effect of Two Row Spaces on Several Agronomic Traits in Soybean [Glycine max (L.) Merr.]. Atlas Journal of Plant Biology 1 (2): 18&ndash;23, 2013.</p>
+<p>Akond M, <span class="emph">B Ragin</span>, R Bazzelle, SK Kantartzi, K Meksem, and <span class="emph">MA Kassem</span>. Quantitative Trait Loci Associated with Moisture, Protein, and Oil Content in Soybean [Glycine max (L.) Merr.]. Journal of Agricultural Science 4 (11): 16-25, October 2012.</p>
+<p>Ragin B, <span class="emph">R Bazelle</span>, <span class="emph">W Clark</span>, S Kantartzi, K Meksem, and <span class="emph">MA Kassem</span>. QTL for Yield and Yield Components Mapped in the PI 438489B By 'Hamilton' Recombinant Inbred Line (RIL) Population of Soybean [Glycine max (L.) Merr.]. Journal of Agricultural Science 4 (9): 98-105, September 2012.</p>
+<p><span class="emph">Salvador Vi</span>, <span class="emph">M Pagan</span>, <span class="emph">M Cooper</span>, SK Kantartzi, K Meksem, and <span class="emph">MA Kassem</span>. Genetic Analysis of Relative Water Content (RWC) in Two Recombinant Inbred Line Populations of Soybean [Glycine max (L.) Merr.]. Journal of Plant Genome Sciences 1 (2): 46-53, 2012.</p>
+<p>Kassem MA, L Ramos, L Leandro, G Mbofung, DL Hyten, SK Kantartzi, RL Grier, VN Njiti, S Cianzio, and K Meksem. The 'PI 438489B' by 'Hamilton' SNP-Based genetic linkage map of soybean [Glycine max (L.) Merr.] Identified quantitative trait loci that underlie seedling SDS resistance. Journal of Plant Genome Sciences 1 (1) 18&ndash;30, 2012.</p>
+<p><span class="emph">Williams B</span>, SK Kantartzi, K Meksem, and <span class="emph">MA Kassem</span>. Genetic Analysis of Root and Shoot Traits in the Soybean [Glycine max (L.) Merr.] 'Essex' By 'Forrest' Recombinant Inbred Line Population. Journal of Plant Genome Sciences 1 (1): 1&ndash;9, 2012.</p>
+<p>Ivey S, <span class="emph">K Ouertani</span>, <span class="emph">E Washington</span>, <span class="emph">P Lage</span>, SK Kantartzi, K Meksem, DA Lightfoot, and <span class="emph">MA Kassem</span>. Evaluation of Agronomic Traits in 'Essex' By 'Forrest' Recombinant Inbred Line Population of Soybean [Glycine max [L.] Merr.]. Atlas Journal of Plant Biology 1 (1): 13-17, 2011.</p>
+<p>Ouertani K, <span class="emph">E Washington</span>, <span class="emph">P Lage</span>, <span class="emph">S Woods</span>, W Holland, <span class="emph">L Moore</span>, <span class="emph">J Walker</span>, DA Lightfoot, and <span class="emph">MA Kassem</span>. Comparison of Soybean [Glycine max (L.) Merr.] Yield, Yield Components, Root, and Shoot Traits in ESPS and CSPS. Atlas Journal of Plant Biology 1 (1): 1&ndash;5, 2011.</p>
+<p><span class="emph">Hartz C</span>, <span class="emph">P Petty</span>, <span class="emph">K Ouertani</span>, <span class="emph">S Burgado</span>, <span class="emph">C Lawrence</span>, and <span class="emph">MA Kassem</span>. Influence of Iron, Potassium, Magnesium, and Nitrogen Deficiencies on the Growth and Development of Sorghum and Sunflower Seedlings. Journal of Biotech Research 1 (3): 64-71, 2009.</p>
+<p>Karangula UB, <span class="emph">MA Kassem</span>, L Gupta, and DA Lightfoot. Genome Architecture Underlies Seed Yield In Soybeans Resistant to Heterodera glycines. Current Issue in Mol. Biol. 11 (Suppl. 1): i73&ndash;84, March 2009.</p>
+<p><span class="emph">Woodert D</span>, S Ivey, <span class="emph">E Washington</span>, <span class="emph">S Woods</span>, <span class="emph">J Walker</span>, <span class="emph">N Krueger</span>, M Sahnawaz, and <span class="emph">MA Kassem</span>. Is there a correlation between plant height and yield in soybean? Reviews in Biology and Biotechnology 7 (2): 70-76, 2008.</p>
+<p>Jacobson J, A Alcivar, J Rainho, and <span class="emph">MA Kassem</span>. Genomic Regions Containing QTL for Plant Height, Internodes Length, and Flower Color in Soybean [Glycine max (L.) Merr.]. BIOS A Quarterly Journal of Biology 78 (4): 119-126, December, 2007.</p>
+<p>Alcivar A, J Jacobson, J Rainho, K Meksem, DA Lightfoot, and <span class="emph">MA Kassem</span>. Genetic Analysis of Soybean Plant Height, Hypocotyl and Internode Lengths. Journal of Agricultural, Food, and Environmental Sciences 1 (1): 1-20, March 2007.</p>
+<p>Kassem MA, K Meksem, AJ Wood, and DA Lightfoot. A Microsatellite Map Developed from Late Maturity Germplasm 'Essex' by 'Forrest' Detects Four QTL for Soybean Seed Yield Expected from Early Maturing Germplasm. Reviews in Biology &amp; Biotechnology 6 (1): 2-10, January 2007a.</p>
+<p>Kassem MA, K Meksem, AJ Wood, and DA Lightfoot. Additional QTL for SDS and SCN resistances in a soybean recombinant inbred line population of Essex x Forrest. Reviews in Biology &amp; Biotechnology 6 (1): 11-19, January 2007b.</p>
+<p>Kassem MA, J Shultz, K Meksem, Y Cho, AJ Wood, MJ Iqbal, and DA Lightfoot. An Updated 'Essex' by 'Forrest' Linkage Map and First Composite Map of QTL Underlying Six Soybean Traits. Theor Appl Genet 113 (6): 1015-1026, October 2006.</p>
+<p>Shultz JL, D Kurunam, K Shopinski, MJ Iqbal, S Kazi, K Zobrist, R Bashir, S Yaegashi, N Lavu, AJ Afzal, CR Yesudas, <span class="emph">MA Kassem</span>, C Wu, HB Zhang, CD Town, K Meksem, and DA Lightfoot. The Soybean Genome Database (SoyGD): a browser for display of duplicated, polyploid, regions and sequence tagged sites on the integrated physical and genetic maps of Glycine max. Nucleic Acids Research 34: D758-D765, June 2006.</p>
+<p>Joshua Underwood, John Moch, Ming-Shun Chen, and <span class="emph">Lieceng Zhu</span>. 2014.<br /> Exogenous salicylic acid enhances the resistance of wheat seedlings to Hessian fly (Diptera: Cecidomyiidae) infestation under heat stress. J. Econ. Entomol. 107: 2000-2004.</p>
+<p>Currie, Y., M. S. Chen, R. Nickolov, G. Bai, <span class="emph">Lieceng Zhu</span>. 2014.<br /> Impact of transient heat stress on polar lipid metabolism in seedlings of wheat near-isogenic lines contrasting in resistance to Hessian fly (Cecidomyiidae) infestation. J. Econ. Entomol. 107: 2196-2203.</p>
+<p>Yaleaka Currie, John Moch, Joshua Underwood, Hamzah Kharabsheh, Amy Quesenberry, Risa Miyagi, Carolyn Thomas, Melanie Boney, Samantha Woods, Ming-Shun Chen, and <span class="emph">Lieceng Zhu</span>. 2014.<br /> Transient heat-stress compromises the resistance of wheat seedlings to Hessian fly (Diptera: Cecidomyiidae) infestation. J. Econ. Entomol. 107: 389-395.</p>
+<p>Yaleaka Currie, John Moch, Joshua Underwood, Hamzah Kharabsheh, Amy Quesenberry, Risa Miyagi, Carolyn Thomas, Melanie Boney, Samantha Woods, Ming-Shun Chen, and <span class="emph">Lieceng Zhu</span>. 2014.<br /> Transient heat-stress compromises the resistance of wheat seedlings to Hessian fly (Diptera: Cecidomyiidae) infestation. J. Econ. Entomol. 107: 389-395.</p>
+<p><span class="emph">Lieceng Zhu</span>, Xuming Liu, Haiyan Wang, Chitvan Khajuria, John C. Reese, R. Jeff Whitworth, Ruth Welti, and Ming-Shun Chen. 2012. Rapid mobilization of membrane lipids in wheat leaf-sheathes during incompatible interactions with Hessian fly. Mol Plant Microbe Interact. 25 (7) 920-930.</p>
+<p><span class="emph">Lieceng Zhu</span>, John C. Reese, Joe Louis, Leslie Campbell, and Ming-Shun Chen. 2011. Electrical Penetration Graph Analysis of the Feeding Behavior of Soybean Aphids on Soybean Cultivars Source: J. of Econ. Entomol. 104:2068-2072.</p>
+<p><span class="emph">Lieceng Zhu</span>, Ming-Shun Chen, AND Xiang Liu 2011 Changes in Phytohormones and Fatty Acids in Wheat and Rice Seedlings in Response to Hessian Fly (Diptera: Cecidomyiidae) Infestation. J. Econ. Entomol 104: 1384-1392</p>
+<p><span class="emph">Lieceng Zhu</span>, Ming-Shun Chen, and Xiang Liu. 2011 Profiling metabolites in wheat plants in responding to Hessian flies infestation (abstract). Journal of Agricultural and Urban Entomology 26(3)</p>
+<p><span class="emph">Lieceng Zhu</span>, X. Liu and M.S. Chen. 2010. Differential accumulation of phytohormones in wheat seedlings attacked by avirulent and virulent Hessian fly (Diptera: Cecidomyiidae) larvae. J. Econ. Entomol. 103(1): 178-185.</p>
+<p><span class="emph">Lieceng Zhu</span>, X.M. Liu, X. Liu, R. Jeannotte, J. C. Reese, R. Welti, M. Harris, J. J. Stuart, and M.S. Chen. 2008. Hessian fly (Mayetiola destructor) attack causes dramatic shift in carbon/nitrogen metabolism in wheat. Mol. Plant-Microbe Interact. 21(1) 70-78.</p>
+<p>Liu, X.M., J. Bai, L. Huang, <span class="emph">Lieceng Zhu</span>, X. Liu, N. Weng, J. Reese, M. Harris, J. Stuart, and M. Chen. 2007. Gene expression of different wheat genotypes during attack by virulent and avirulent Hessian fly (Mayetiola destructor) larvae. J. Chem. Ecol. 33:2171&ndash;2194.</p>
+<p>Jia, Y., F. Correa-Victoria, A. McClung, <span class="emph">Lieceng Zhu</span>, G. Liu, Y. Wamishe, J. Xie, M. A. Marchetti, S. R. M. Pinson, J. N. Rutger, and J. C. Correll. 2007. Rapid determination of rice cultivar responses to the sheath blight pathogen Rhizoctonia solani using a micro-chamber screening method. Plant Disease. 91(5): 485-489.</p>
+<p>P. Voothuluru, J. Meng, C. Khajuria1, J. Louis1, <span class="emph">Lieceng Zhu</span>, S. Starkey, G.E. Wilde, C. Baker and C.M. Smith. 2006. Categories and inheritance of resistance in wheat cereal introduction 2401 to Russian Wheat Aphid (Homoptera: Aphididae) biotype 2. J. Econ. Entomol. 99(5): 1854-1861</p>
+<p><span class="emph">Lieceng Zhu</span>., C.M. Smith, and J.C. Reese. 2005. Categories of resistance to greenbug (Homoptera: Aphididae) biotype K in wheat lines containing Aegilops tauschii genes. J. Econ. Entomol. 98(6): 2260-2265</p>
+<p><span class="emph">Lieceng Zhu</span>, C.M. Smith, A. Fritz, E. Boyko1, P. Voothuluru1 and B.S. Gill. 2005. Inheritance and molecular mapping of new greenbug resistance genes in wheat germplasms derived from Aegilops tauschii. Theor. Appl. Genet. 111(5): 831-837</p>
+<p>Bonia, B., S. Prabhakar, C.M. Smith, S. Starkey, <span class="emph">Lieceng Zhu</span>, E. Boyko and J.C. Reese. 2005. Categories of resistance to biotype I greenbug (Homoptera: Aphididae) in wheat lines containing the genes Gbx and Gby. J. Kan. Entomol. Soc. 78: 252-260</p>
+<p><span class="emph">Lieceng Zhu</span>, C.M. Smith, A. Fritz, E.V. Boyko and M.B. Flinn. 2004. Genetic analysis and molecular mapping of a wheat gene conferring tolerance to the greenbug (Schizaphis graminum Rondani). Theor. Appl. Genet. 109(2): 289-293</p>
+<p>Hazen, S.P., <span class="emph">Lieceng Zhu</span>, H.S. Kim, G. Tang and R.W. Ward. 2002. Genetic similarity of winter wheat in Shaanxi province, China and other common wheat germplasm pools. Gen. Res. Crop Evol. 49(4): 437-445</p>
+<p>Wang, Y., <span class="emph">Lieceng Zhu</span>, J. Gao, Y. Ji and X. Wang. 2002. Research status and countermeasure for exploitation of wheat germplasm in Shaanxi province. Cereal Crops. 22(4): 94-97</p>
+<p><span class="emph">Lieceng Zhu</span>, G.S. Tang, S.P. Hazen, H.S. Kim and R.W. Ward. 1999. RFLP-based genetic diversity and its development in Shaanxi wheat lines. Acta Bot. Boreali. Occident. Sin. 19(2): 208-213</p>
+<p>Song, X., S. Liu, and <span class="emph">Lieceng Zhu</span>. 1999. The comparative study on wheat CMS lines with Ae. uniaristata and Ae. kotschyi cytopolasm. Acta Agric. Boreali. Occident. Sin. 8(3): 48-52</p>
+<p><span class="emph">Lieceng Zhu</span>., L.J. Ma and X.Y. Song. 1999. A comparative study on wheat CMS lines of Ae. uniaristata and Ae. kotschyi cytoplasm, &Pi;. Effects on agronomic characters. Acta Univ. Agric. Boreali. Occident. Sin. 27(1): 4-9</p>
+<p><span class="emph">Lieceng Zhu</span>, Y.G. Hu and L.J. Ma, et al. 1998. A comparative study on wheat CMS lines of Ae. uniaristata and Ae. kotschyi cytoplasm, &Iota;. Restoring and maintaining relationship and haploid frequency. Acta Univ. Agric. Boreali. Occident. Sin. 26(6): 21-24</p>
+<p><span class="emph">Lieceng Zhu</span>, G. Tang and X. Yang. 1995. Genetic distances and cluster analysis of weak-winter wheat germplasms. Cereal Crops. 15(4): 41-43</p>
+<p><span class="emph">Lieceng Zhu</span> and G. Tang. 1995. Principal component analysis and comprehensive evaluation of elite wheat germplasms. J. Shaanxi Agric. Sci. (4): 29-30</p>
+<p>Liu, X., B. Hu and <span class="emph">Lieceng Zhu</span>. 1995. An analysis of the results of two tested varieties in maize improved population. Acta Agric. Boreali. Occident. Sin. 4(2): 13-16</p>
+<p><span class="emph">Lieceng Zhu</span> and G. Tang. 1994. A study on correlation between early maturity and agronomic traits of wheat cultivars. J. Shaanxi Agric. Sci. (1): 5-6</p>
+<p>G. Tang and <span class="emph">Lieceng Zhu</span> 1992. Development and perspective of germplasm research in Shaanxi Province. J. Shaanxi Agric. Sci. 2:</p>
+<h3>Book Chapters</h3>
+<p>Bellaloui N, A Mengistu, <span class="emph">MA Kassem</span>, CA Abel, and LHS Zobiole. Role of Boron Nutrient in Nodules Growth and Nitrogen Fixation Rates in Soybean Genotypes Under Water Stress. INTECH Open Access Publisher, 2014.<br /> Published. http://dx.doi.org/10.5772/56994.</p>
+<p>Lightfoot DA, A Sharma, R Bashir, and <span class="emph">MA Kassem</span>. Loci underlying soil ediphic, physiological and developmental traits in soybean (height, regeneration, aluminum, manganese). In Recent Advances in Molecular Marker Systems for Soybean Breeding. Li W and Lightfoot DA. 2012. Scientific Press, Beijing China, pp. 255, ISBN: 9787030346780.</p>
+</div>
+</div>
+<!--div id="three-out">
+<h3>Agriculture Funded Projects</h3>
+<table class="projects">
+	<tr>
+		<th class="projects">Sponsor</th>
+		<th class="projects">Amount</th>
+		<th class="projects">Principal Investigator</th>
+		<th class="projects">Project Summary</th>
+	</tr>
+	<tr>
+		<td class="projects">
+			<p>Department of Defense U.S. Army / Office of Naval Research (ONR)<br />6/1/2011 - 5/31/2014</p>
+			<p>
+				<span class="emph">Project Title:</span><br />
+				Genetic Analysis of Seed Isoflavones, Protein, and Oil Contents in Soybean [Glycine max (L.) Merr.] 
+			</p>
+		</td>
+		<td class="projects"><span class="emph">$544,695</span></td> 
+		<td class="projects"><span class="emph">Dr. Abdelmajid Kassem</span></td>
+		<td class="projects">
+			<p>U.S. Army grant award W911NF-11-1-0178 provides funding for applying genomic techniques to investigate the genetic analysis of several important agronomic traits, and identify and map quantitative trait loci (QTL) for seed isoflavones content, protein and oil content, yield, and yield components on the soybean genome.  Funding will also support research and training of undergrad and graduate students knowledge of several genomic techniques, using state-of-the art equipment, analyzing data using statistical genomic software, and be trained in scientific writing of abstracts and publications. </p>
+		</td>
+	</tr>
+	<tr>
+		<td class="projects">
+			<p>U.S. Department of Agriculture (USDA) National Institute of Food and Agriculture (NIFA)<br />3/1/2011 - 2/28/2015</p>
+			<p>
+				<span class="emph">Project Title:</span><br />
+				Entrepreneurial Network Development Linked to a Southeastern North Carolina Regional Food System Initiative: Building Innovation Capacity in Limited Resource Rural Households
+			</p>
+		</td>
+		<td class="projects"><span class="emph">$366,519</span></td> 
+		<td class="projects"><span class="emph">Dr. Pamela Jackson</span></td>
+		<td class="projects">
+			<p>USDA NIFA Community Food Project grant award 2011-67023-30061 provides funding for piloting a model of empowering low-income residents in Fayetteville, NC and low-resource farmers in eleven North Carolina rural counties by linking together the skills and resources of these rural and urban communities for developing sustainable solutions to challenges faced by these low-income consumers and low-resource food producers. The Community Food Project includes support and participation from multiple partners.</p>
+		</td>
+	</tr>	
+	<tr>
+		<td class="projects">
+			<p>Department of Commerce - Economic Development Administration<br />7/1/2012 - 6/30/2017</p>
+			<p>
+				<span class="emph">Project Title:</span><br />
+				EDA University Center at Fayetteville State University
+			</p>
+		</td>
+		<td class="projects"><span class="emph">$385,776 <span class="department">(Funds through 6/30/2015)</span></span></td> 
+		<td class="projects"><span class="emph">Dr. Pamela Jackson</span></td>
+		<td class="projects">
+			<p>The EDA University Center for Economic Development at FSU funded by the Economic Development Administration grant award 04-66-06676 represents a unique opportunity to make a significant difference in the long distressed economy of southeast North Carolina. Leveraging the extensive small business development expertise at FSU, the EDA University Center for Economic Development will drive job growth through coordinated support of innovative entrepreneurs and play a leading role in transforming disconnected pockets of success to collaborative clusters of self-sustaining growth. The EDA University Center for Economic Development will dedicate particular focus on high innovation segments within the regional defense, energy, and agriculture segments.</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="projects">
+			<p>USDA Agricultural Marketing Service (AMS)<br />9/30/2014 - 9/29/2016</p>
+			<p>
+				<span class="emph">Project Title:</span><br />
+				Promoting Food Security in a Low Income Urban Community: The Murchison Road Community Farmers Market 
+			</p>
+		</td>
+		<td class="projects"><span class="emph">$79,372</span></td> 
+		<td class="projects"><span class="emph">Dr. Pamela Jackson</span></td>
+		<td class="projects">
+			<p>USDA Agricultural Marketing Service (AMS) grant award 14&middot;FMPPX&middot;NC&middot;0104 provides funding under the Farmers Market Promotion Program to address low income and low food access in an urban community characterized by poverty and limited access to supermarkets, and create food market opportunities by establishing a farmers market that links local small scale farmers with a food insecure community in an effort to improve economic and health outcomes while contributing to the vitality and liveability of the area.</p>
+		</td>
+	</tr>
+</table>
+<h3>Miscellaneous Agriculture Projects</h3>
+<table class="projects">
+	<tr>
+		<td class="projects">
+			<p>University of Minnesota Department of Agronomy and Plant Genetics
+				<br />Prime: USDA National Institute of Food and Agriculture
+				<br />8/1/2014 - 1/31/2015
+			</p>
+			<p>Project Title: The Role of Salicylic Acid in Maintaining Wheat's Resistance Under High Temperature Stress </p>
+		</td>
+		<td class="projects"><span class="emph">$14,000</span></td>
+		<td class="projects"><span class="emph">Dr. Lieceng Zhu</span></td>
+		<td class="projects">
+			<p>The University of Minnesota received an award from USDA's National Institute of Food and Agriculture (NIFA to develop new varieties of wheat and barley under the Triticeae Coordinated Agricultural Project (TCAP).  TCAP offered MSI faculty potential areas of collaboration that provide opportunities to train students and to participate in research.  Fayetteville State University is one of eight MSI participant universities in the MSI/TCAP partnership.  TCAP funding allowed FSU students to participate in TCAP-related summer internship programs, work on projects in wheat and barley breeding and genetics labs, and attend the 2014 TCAP Undergraduate Research Academy.</p>
+		</td>
+	</tr>
+</table>
+
+</div-->

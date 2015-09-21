@@ -1,0 +1,253 @@
+<p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+var finished = true;// Whether or not the toggle animation is done
+var visibleBio = "";
+var visibleTab = "#out1";	// Default tab
+//var bioVisible = false;
+
+function reset() {
+// Resets bios
+	$(".bios").hide();
+	$(".out_items").css("width","auto");
+	$(".out_items").css("height","auto");
+	//alert("bios are now hidden");
+	$(".out_items").show();
+	visibleBio = "";
+}
+
+function showTab( tab ) {
+// Show the specified tab
+	if ( tab != visibleTab ) {
+		finished = false;
+		$(visibleTab).slideToggle(400,function(){
+			finished = true;
+		}); 
+		finished = false;
+		$(tab).slideToggle(400,function(){
+			finished = true;
+			visibleTab = tab;
+		});
+	}
+}
+
+function showBio( bio ) {
+// Show specified bio
+	parent = bio + "-item";
+	bio += "-bio";
+	//alert(bio + " " + visibleBio);
+	if ( bio != "-bio" && bio != visibleBio ) {
+		//alert(bio + " " + parent);
+		$(".out_items").hide();
+		$(".out_items").css("width","400px");
+		$(".out_items").css("height","300px");
+		$(parent).show();
+		finished = false;
+		if (visibleBio != "") {
+			$(visibleBio).slideToggle(400,function(){
+				$(bio).slideToggle(400, function(){
+					visibleBio = bio;
+					finished = true;
+				});
+			});
+		}
+		else {
+			$(bio).slideToggle(400, function(){
+				visibleBio = bio;
+				finished = true;
+			});		
+		}
+	} else if (bio == visibleBio) reset();
+}
+
+$(document).ready(function(){
+	$(visibleTab).slideToggle();
+	showBio( visibleBio );
+	$("#one").click(function(){if ( finished ) /*visibleTab == "#out1" ? reset() :*/ showTab("#out1" );});
+	//$("#two").click(function(){if ( finished ) showTab("#out2" );});	
+	//$("#three").click(function(){if ( finished ) showTab("#out3" );});
+	$("#four").click(function(){if ( finished ) showTab("#out2" );});
+	//$("#jackson").click(function(){if ( finished ) showBio("#jackson");});
+	//$("#mcelveen").click(function(){if ( finished ) showBio("#mcelveen");});
+	//$("#bible").click(function(){if ( finished ) showBio("#bible");});
+	//$("#marshburn").click(function(){if ( finished ) showBio("#marshburn");});
+	//$("#fountain").click(function(){if ( finished ) showBio("#fountain");});
+	//$("#walker").click(function(){if ( finished ) showBio("#walker");});
+    $("div.twelvecolheader h1").html("Research Office and Technology Transfer");
+});
+// ]]></script>
+</p>
+<style><!--
+#container2 ul {padding: 0px;}
+li.link {list-style-type: none;}
+li.link a, a.links2 {
+		display: block;
+		color: #e0e2e4;
+		width: 250px;
+		padding: 5px 20px;
+		margin: none;
+		margin-bottom: 1px;
+		text-decoration: none;
+		text-align: center;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		background: -moz-linear-gradient(right top, #02549e, #027AAe); 
+		background: linear-gradient(to right top, #02549e , #027AAe); 
+	}
+	a.links2 {
+		border: 1px outset #000000;
+		width: 128px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	li.link a:hover, a.links2:hover {
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		background: -moz-linear-gradient(left top, #02549e, #027AAe); 
+		background: linear-gradient(to left top, #02549e , #027AAe); 
+	}
+	a.links2:hover {
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		border: 1px inset #000000;
+	}
+	#out1, #out2, #out3, #container2 {
+		display: none;
+		float: left;
+		width: 480px; 
+		height: 530px;
+		margin: 10px;
+		padding: 10px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+	#out1 {padding: 0px;}
+	#out2 {overflow:scroll;}
+	#container2 {display:block !important; padding: 0px !important;width:290px;}
+	div.out_items {
+		display: block;
+		float: left;
+		align: center;
+		width: 200px;
+		height: 350px;
+		/*padding: 20px;*/
+		/*background-color: F9FFFC;*/
+		margin: 0px 10px 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	div.out_items img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	span.department {
+		font-size: 10px;
+		line-height: 100%;
+	}
+	span.emph {
+		font-weight: bold;
+		font-style: italic;
+	}
+	
+	/* Table */
+	table.projects {
+		width: 500px;
+	}
+	table.projects, th.projects, td.projects {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	td.projects, th.projects {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	td.projects p {
+		font-size: 10px;
+	}
+	p.bios {
+		/*display: none;*/
+		width: 200px;
+		height: 200px;
+	}
+	#bounding {
+		width: 846px;
+		height: 1600px;
+	}
+--></style>
+<div id="bounding">
+<div id="container2">
+	<ul>
+		<li class="link"><a href="javascript:;" id="one">Personnel</a></li>
+		<li class="link"><a href="x10387.xml" id="two">Ongoing Outreach</a></li>
+		<li class="link"><a href="x10665.xml" id="three">Funded Projects</a></li>
+		<li class="link"><a href="javascript:;" id="four">Scholarly Publications</a></li>
+		<li class="link"><a href="x10374.xml" id="four">Back to Main</a></li>
+	</ul>
+</div>
+<div id="out1" class="out">
+	<div class="out_items" id="jackson-item">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/jackson-headshot.png" width="48px" />
+		<a id="jackson" class="links2" href="javascript:;">Dr. Pam Jackson<br />
+			<span class="department">Associate Dean - School of Business and Economics</span>
+		</a>
+			<p id="jackson-bio" class="bios">Dr. Pam Jackson the Associate Dean for the School of Business and Economics is actively involved in the economic and entrepreneurial development of rural farmers in North Carolina.  She has multiple grants to aid rural farmers and has established a farmers market offering fresh vegetables in a HUD Zone Food Desert.</p>
+	</div>
+	<div class="out_items" id="mcelveen-item">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/mcelveen-headshot.png" width="48px" />
+		<a id="mcelveen" class="links2" href="javascript:;">Greg McElveen<br />
+			<span class="department">Assistant Dean for Strategic Initiatives - School of Business and Economics</span>
+		</a>
+			<p id="mcelveen-bio" class="bios">Mr. Greg McElveen Assistant Dean for Strategic Initiatives in the School of Business and Economics is active in the entrepreneurial development of rural farmers in NC and is actively involved in researcher more efficient and cost effective methods of converting hog wastes to energy.</p>
+	</div>
+	<div class="out_items" id="bible-item">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/bible-headshot.png" width="48px" />
+		<a id="bible" class="links2" href="javascript:;">Dr. Lynn Bible<br />
+			<span class="department">Department of Accounting, Finance, Healthcare Administration & Information Systems</span>
+		</a>
+			<p id="bible-bio" class="bios">Dr. Lynn Bible of the Department of Accounting, Finance, Healthcare Administration and Information Systems is active in the economic development of rural NC farmers.</p>
+	</div>
+	<div class="out_items" id="fountain-item">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/fountain-headshot.png" width="48px" />
+		<a id="fountain" class="links2" href="javascript:;">Wesley Fountain<br />
+			<span class="department">Office of the Chancellor</span>
+		</a>
+			<p id="fountain-bio" class="bios">Mr. Wesley Fountain of the Director of Constituent and Community Relations the Office of the Chancellor is involved in the economic development of rural farmers.</p>
+	</div>
+	<div class="out_items" id="walker-item">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/walker-headshot.png" width="48px" />
+		<a id="walker" class="links2" href="javascript:;">Jurlonna Walker<br />
+			<span class="department">Director FSU EDA University Center for Economic Development</span>
+		</a>
+			<p id="walker-bio" class="bios">Ms. Jurlonna Walker, the Director FSU EDA University Center for Economic Development, oversees much of the outreach to farmers in the area.</p>
+	</div>
+	<div class="out_items" id="marshburn-item">
+		<img height="60px" src="Images/Research/Agriculture Initiatives/marshburn-headshot-new.png" width="48px" />
+		<a id="marshburn" class="links2" href="javascript:;">Milton "Johnnie" Marshburn<br />
+			<span class="department">Regional Director, Small Business Technology & Development Center (SBTDC)</span>
+		</a>
+			<p id="marshburn-bio" class="bios">The Cape Fear Region SBTDC has assisted agricultural clients in many aspects of business. The SBTDC has helped starting new farmer's markets, expanding value added revenue streams, start and expand food processing plants. The SBTDC has assisted in farm projects that utilize alternative fuels for cost reductions, such as solar energy and bio gas production. The SBTDC has assisted clients in new forms of agriculture such as hydroponics and aqua phonics, to make the projects commercially feasible.<br /><br />
+			Small Business Technology and Development Center (SBTDC) at Fayetteville State University.<br />
+			Your Business Better.<br />
+			1200 Murchison Road. Fayetteville, NC 28301/ 910-672-1727/ <a href="www.sbtdc.org">www.sbtdc.org</a><br /><br />
+			The SBTDC at FSU is a program of Fayetteville State University and operated in partnership with the US Small Business Administration. North Carolina's SBTDC program is administered statewide by NC State University on behalf of The University of North Carolina System.</p>
+	</div>
+</div>
+<div id="out2" class="out">
+	<div class="out_container">
+		<p>Beratan, K., <span class="emph">Jackson, P.</span> and Godette, S. (2014) "Fostering Capacity Building among Groups of Disadvantaged Farmers, Southeastern North Carolina (USA)," Journal of Agriculture, Food Systems, and Community Development, pp. 1–18</p>
+	</div>
+</div>
+<div id="out3" class="out">
+</div>
+</div>

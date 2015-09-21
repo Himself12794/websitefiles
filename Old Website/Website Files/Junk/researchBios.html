@@ -1,0 +1,214 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function toggleChao(){
+	$("#kassem_out").hide();
+	$("#zhu_out").hide();
+	$("#padilla_out").hide();
+	$("#ila_out").hide();
+	$("#chao_out").slideToggle();
+}
+function toggleKassem(){
+	$("#chao_out").hide();
+	$("#zhu_out").hide();
+	$("#padilla_out").hide();
+	$("#ila_out").hide();
+	$("#kassem_out").slideToggle();
+}
+function toggleZhu(){
+	$("#chao_out").hide();
+	$("#kassem_out").hide();
+	$("#padilla_out").hide();
+	$("#ila_out").hide();
+	$("#zhu_out").slideToggle();
+}
+function togglePadilla(){
+	$("#chao_out").hide();
+	$("#zhu_out").hide();
+	$("#kassem_out").hide();
+	$("#ila_out").hide();
+	$("#padilla_out").slideToggle();
+}
+function toggleIla(){
+	$("#chao_out").hide();
+	$("#zhu_out").hide();
+	$("#kassem_out").hide();
+	$("#padilla_out").hide();
+	$("#ila_out").slideToggle();
+}
+$(document).ready(function(){
+		var person = getParameterByName("bio");
+		if ( person == "chao" ) toggleChao();
+		else if ( person == "kassem" ) toggleKassem();
+		else if ( person == "zhu" ) toggleZhu();
+		else if ( person == "padilla") togglePadilla();
+		else if ( person == "ila") toggleIla();
+			
+		$("#chao").click(function(){toggleChao()});
+		$("#kassem").click(function(){toggleKassem()});
+		$("#zhu").click(function(){toggleZhu()});
+		$("#padilla").click(function(){togglePadilla()});
+		$("#ila").click(function(){toggleIla()});
+});
+// ]]></script>
+</p>
+<style><!--
+.link:link, .link:visited, .links2:link, .links2:visited {
+		display: block;
+		color: #e0e2e4;
+		width: 250px;
+		padding: 5px 20px;
+		margin: none;
+		margin-bottom: 1px;
+		text-decoration: none;
+		text-align: center;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		background: -moz-linear-gradient(left top, #02549e, #027AAe); 
+		background: linear-gradient(to left top, #02549e , #027AAe); 
+	}
+	.link:hover, .links2:hover {
+		display: block;
+		color: #e0e2e4;
+		text-decoration: none;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		background: -moz-linear-gradient(right top, #02549e, #027AAe); 
+		background: linear-gradient(to right top, #02549e , #027AAe); 
+	}
+	.links2:link, .links2:visited {
+		width: 130px !important;	
+	}
+	#container {
+		display: block;
+		float: left;
+		margin: 10px;
+		width: auto;
+	}
+	#chao_out {
+		display: none;
+		float: left;
+		width: 500px;
+	}
+	#kassem_out {
+		display: none;
+		float: left;
+		width: 500px;
+	}
+	#zhu_out {
+		display: none;
+		float: left;
+		width: 500px;
+	}
+	#padilla_out {
+		display: none;
+		float: left;
+		width: 500px;
+	}
+	#ila_out {
+		display: none;
+		float: left;
+		width: 500px;
+	}
+	.out_container {
+		display: block;
+		/*background-color: #DDC7A5;*/
+		margin: 10px;
+		padding: 10px;
+		float: left;
+		width: auto;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+	.out_items {
+		display: block;
+		float: left;
+		align: center;
+		width: auto;
+		height: auto;
+		padding: 20px;
+		/*background-color: F9FFFC;*/
+		margin: 10px;
+		margin-top: 0px !important;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	.department {
+		font-size: 10px;
+	}
+	.emph {
+		font-weight: bold;
+		font-style: italic;
+		font-size: 10px;
+	}
+--></style>
+<div id="container">
+	<a class="link" href="javascript:;" id="chao">Dr. Shirley L. Chao</a>
+	<a class="link" href="javascript:;" id="kassem">Dr. Abdelmajid Kassem</a>
+	<a class="link" href="javascript:;" id="zhu">Dr. Lieceng Zhu</a>
+	<a class="link" href="javascript:;" id="padilla">Dr. Carla Padilla</a>
+	<a class="link" href="javascript:;" id="ila">Dr. Daryush Ila</a>
+</div>
+<div id="chao_out">
+	<div class="out_container">
+		<h3>Dr. Shirley Chao</h3>
+		<p>The research of Dr. Shirley Chao of the Department of Biological Sciences focuses on 
+		agricultural pesticides and toxicity. She has recently developed a patent pending “green” 
+		pesticide that is useful on the storage of grains.</p>
+	</div>
+</div>
+<div id="kassem_out">
+	<div class="out_container">
+		<h3>Dr. Abdelmajid Kassem</h3>
+		<p>Dr. Abdelmajid Kassem is the Chair of the Department of Biological Sciences.  His research 
+		focuses on plant genetics and genomics and genetic and QTL mapping of important agronomic traits in major crops.
+		</p>
+	</div>
+</div>
+<div id="zhu_out">
+	<div class="out_container">
+		<h3>Dr. Lieceng Zhu</h3>
+		<h4>Impact of environmental stress on the resistance of plant-parasite interaction</h4>
+		<p>The goal of my research is to investigate, at molecular level, the role of environmental stress in 
+		responses of host plants to parasitic attacks. We use wheat-Hessian fly as a model system to	 
+		determine the impacts of heat stress on metabolism of wheat plants infested by Hessian fly. The 
+		findings from our research will enhance our understanding of the mechanism of loss of resistance
+		in wheat to Hessian fly and the vulnerability of plant resistance to parasite in the context of 
+		environmental stress and climate change.</p>
+	</div>
+</div>
+<div id="padilla_out">
+	<div class="out_container">
+		<h3>Dr. Carla Padilla</h3>
+		<p>Dr. Carla Padilla of the Research Office is currently investigating cost-effective, reduced-water 
+		methods to grow agricultural crops in the desert, using locally occurring minerals and 
+		topography.</p>
+	</div>
+</div>
+<div id="ila_out">
+	<div class="out_container">
+		<h3>Dr. Daryush Ila</h3>
+		<p>Dr. Daryush ILA, the Associate Vice Chancellor for Research at Fayetteville State University,
+		holds an M.S. in Nuclear Physics and a PhD in Condensed Matter Physics.  He has recently 
+		focused his research in the area of producing agricultural crops in the desert, through a trade 
+		secret method referred to as “tiles”.</p>
+	</div>
+</div>
