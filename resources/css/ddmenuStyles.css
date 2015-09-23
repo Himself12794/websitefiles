@@ -1,4 +1,4 @@
-nav {
+nav.customMenu {
 	font-family: Helvetica,sans-serif;
 	font-size: 10px;
 	width: 870px;
@@ -9,15 +9,15 @@ nav {
 	
 	/*line-height: 24px;*/
 }
-nav ul ul {
+nav.customMenu ul ul {
 	display: none;
 }
 
-nav ul li:hover > ul {
+nav.customMenu ul li:hover > ul {
 	display: block;
 }
 
-nav ul {
+nav.customMenu ul {
 	background: #02549E; 
 	background: -ms-linear-gradient(top, #027AAe 0%,#02549e 100%);  
 	background: linear-gradient(top, #027AAe 0%,#02549e 100%);  
@@ -35,11 +35,11 @@ nav ul {
 	display: inline-table;
 }
 
-nav ul li {
+nav.customMenu ul li {
 	float: left;
 }
 
-nav ul li:hover {
+nav.customMenu ul li:hover {
 	background: #02549e;
 	background: -ms-linear-gradient(top, #02549e 0%, #027AAe 40%);
 	background: linear-gradient(top, #02549e 0%, #027AAe 40%);
@@ -48,42 +48,42 @@ nav ul li:hover {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#02549e', endColorstr='#027AAe');/*For IE7-8-9*/ 
 }
 
-	nav ul li:hover a {
+	nav.customMenu ul li:hover a {
 		color: #fff !important;
 	}
 
-	nav ul li a {
+	nav.customMenu ul li a {
 		display: block; padding: 13px 20px;
 		color: #fff !important; text-decoration: none;
 	}
 
-nav ul:after {
+nav.customMenu ul:after {
 	content: ""; 
 	clear: both; 
 	display: block;
 }
 
-	nav ul ul {
+	nav.customMenu ul ul {
 		background: #5f6975; border-radius: 0px; padding: 0;
 		position: absolute; top: 100%;
 		z-index: 1;
 	}
 	
-		nav ul ul li {
+		nav.customMenu ul ul li {
 			float: none; 
 			border-top: 1px solid #6b727c;
 			border-bottom: 1px solid #575f6a;
 			position: relative;
 		}
-			nav ul ul li a {
+			nav.customMenu ul ul li a {
 				padding: 10px 20px;
 				color: #fff;
 			}	
-				nav ul ul li a:hover {
+				nav.customMenu ul ul li a:hover {
 					background: #4b545f;
 				}
 				
-				nav ul ul ul {
+				nav.customMenu ul ul ul {
 					position: absolute; 
 					left: 100%; 
 					top:0;

@@ -3,20 +3,25 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" ></script>
 		<script type=""text/javascript" >
 			
-			function include(file) {
+			function include(file, ref) {
 				
-				var idString = '#' + file.substring(0, file.lastIndexOf("."));
-				idString = idString.replace('/', '-');
-				alert(idString);
+				var idString = ref;
+				alert(ref);
+				alert(ref + ", null: " + (ref == null) + ", undefined: " + (ref === undefined))
+				if (ref == null || ref === undefined) {
+					idString = '#' + file.substring(0, file.lastIndexOf("."));
+					idString = idString.replace('/', '-');
+				}
 				
 				$(idString).load(file); 
 				
 			}
 			
+			
 			$(function(){
 				
 				include("index.html");
-				include("Staff/index.html");
+				include("Staff/index.html","#staff");
 				
 			});
 			
@@ -25,7 +30,7 @@
 	</head>
 	<body>
 		<div id="index"></div>
-		<div id="Staff-index"></div>
+		<div id="staff"></div>
 	</body>
 
 </html>
