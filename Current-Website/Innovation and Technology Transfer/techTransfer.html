@@ -1,33 +1,16 @@
+<link rel="stylesheet" href="Documents/Research/CSS/generalStyles.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
-<script type="text/javascript">// <![CDATA[
-$(document).ready(function(){
-        $("div.twelvecolheader h1").html("Research and Technology Transfer Office");
-    });
-// ]]></script>
-<style>
-<!--
-@import url("http://www.philip.whitingcrew.com/css/ddmenuStyles.css");
-div.innerContent {
-	padding: 20px;
-	padding-right: 200px;
-}
--->
-</style>
+<script src="Documents/Research/JS/includeTool.js" type="text/javascript"></script>
+<script type="text/javascript">
+// <![CDATA[
+	
+	$(function(){
+		include("Documents/Research/HTML/innovationAndTechnologyTransferMenu.html","#menu");
+	});
+	
+// ]]>
+</script>
 
-<nav>
-	<ul>
-		<li><a href="x10802.xml">Contact Info TT</a></li>
-		<li><a href="x10804.xml">Technology Transfer Questionnaire</a></li>
-		<li><a href="x10842.xml">Help for Inventors</a></li>
-		<li><a href="x10805.xml">Research Commercializations</a></li>
-		<li><a href="#">Patenting</a>
-			<ul>
-				<li><a href="Documents/Research/UNC-GA patent policy.pdf">UNC-GA Patent Policy</a></li>
-				<li><a href="Documents/Research/Patenting/Patenting at FSU.docx">Patenting at FSU</a></li>
-				<li><a href="Documents/Research/Patenting/Procedure for Filing Provisional Patent (11-20-2013).docx">Procedure for Filing Provisional Patent</a></li>
-			</ul>
-		</li>
-	</ul>
-</nav>
+<div id="menu"></div>
 
 <p><a href="Documents/Research/FSU TECHNOLOGY TRANSFER QUESTIONAIRRE.docx">FSU TECHNOLOGY TRANSFER QUESTIONAIRRE</a></p>

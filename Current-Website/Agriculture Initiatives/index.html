@@ -1,8 +1,17 @@
+<link rel="stylesheet" href="Documents/Research/CSS/generalStyles.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script src="Documents/Research/JS/includeTool.js" type="text/javascript"></script>
+<script type="text/javascript">
+// <![CDATA[
+	
+	$(function(){
+		include("Documents/Research/HTML/agricultureInitiativesMenu.html","#menu");
+	});
+	
+// ]]>
+</script>
 <style>
 <!--
-@import url("http://www.philip.whitingcrew.com/css/ddmenuStyles.css");
-/*@import url("../ddmenuStyles.css");*/
-
 div.images img {
     display: block;
     float: left;
@@ -16,31 +25,7 @@ div.images img {
 -->
 </style>
 
-<nav>
-	<ul>
-		<li><a href="x10798.xml">Plant<!--Health/Production--> Research</a>
-			<ul>
-				<li><a href="x10798.xml">Ongoing Research and Development</a></li>
-				<li><a href="x10799.xml">Funded Research</a></li>
-			</ul>
-		</li>
-		<li><a href="x10796.xml">Animal Research</a>
-			<ul>
-				<li><a href="x10796.xml">Ongoing Research and Development</a></li>
-				<li><a href="x10797.xml">Funded Projects</a></li>
-				<li><a href="x10841.xml">Scholarly Publications</a></li>
-			</ul>
-		</li>
-		<li><a href="x10792.xml">Agricultural Outreach</a>
-			<ul>
-				<li><a href="x10793.xml">Ongoing Outreach</a></li>
-				<li><a href="x10794.xml">Funded Projects</a></li>
-			</ul>
-		</li>
-		<li><a href="x10800.xml">US/Morocco Agricultural Summit</a></li>
-		<li><a href="x10795.xml">Certificate/Education Programs</a></li>
-	</ul>
-</nav>
+<div id="menu"></div>
 
 
 <div class="images">
