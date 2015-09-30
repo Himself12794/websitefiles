@@ -24,9 +24,18 @@
 		padding: 10px;
 		color: #FFF;
 	}
-	.shiftright {
-		position: relative;
-		right: 35px;
+	
+	@media all and min-width: 480px {
+		.shiftright {
+			position: relative;
+			right: 35px;
+		}
+	}
+	
+	@media all and not min-width: 480px {
+		.shiftright {
+			width: 742px !important;
+		}
 	}
 	
 	.the {
