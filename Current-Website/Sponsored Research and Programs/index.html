@@ -38,9 +38,9 @@
 		}
 	}
 	
-	@media not mobile {
+	@media only screen and (max-width: 500px) {
 		#mobileFriendlyLink {
-			display: none;
+			display: inline !important;
 		}
 	}
 	
@@ -77,7 +77,7 @@
 <div id="menu"></div>
 
 <div class="navVisible">
-	<p class="smalltext" id="mobileFriendlyLink" style="text-decoration: none; color: #610b0e;"><a href="x11656.xml">Mobile friendly site</a></p>
+	<p class="smalltext" id="mobileFriendlyLink" style="text-decoration: none; color: #610b0e; display: none;"><a href="x11656.xml">Mobile friendly site</a></p>
 	<div class="ninecol last">
 		<div class="boxblueround shiftright">
 			<img src="Images/shared/buildings/large/sbeA385x289.jpg" width="195px" height="140px" vspace="" hspace="10px" align="left" />
