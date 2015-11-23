@@ -1,0 +1,274 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script src="Documents/Research/JS/includeTool.js" type="text/javascript"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
+<!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script-->
+<!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"-->
+<link rel="stylesheet" href="Documents/Research/CSS/generalStyles.css">
+<script type="text/javascript">
+// <![CDATA[
+	
+	$(function(){
+		include("Documents/Research/HTML/sponsoredResearchAndProgramsMenu.html","#menu");
+	});
+	
+// ]]>
+</script>
+<style>
+<!--
+	@import url("Documents/Research/CSS/generalStyles.css");
+-->
+</style>
+<style>
+	<!--/*html, body {
+		width: 100%;
+		height: 100%;
+		padding: 0px;
+		margin: 0px;
+		font-family: Verdana,Arial,sans-serif;
+		font-size: 14px;
+	}
+	* {
+		box-sizing: content-box;
+	}
+	body {
+		background-color: #003;
+		font-family: Arial,Helvetica,sans-serif;
+		font-size: 0.857em;
+		line-height: 1.2em;
+		color: #000;
+	}
+	.row {
+		margin: 0px auto;
+	}
+	.twelvecolheader h1 {
+		text-align: right;
+		font-size: 1.5em;
+		color: #FFF;
+		font-weight: lighter;
+		line-height: 102px;
+		padding-right: 10px;
+	}
+	.smaller {
+		width: 800px;
+	}
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 0px;
+	}*/-->
+	
+	/*Borrowed from http://cssdeck.com/labs/5jlzqlt6 */
+	/*  Basic stucture
+	=====================*/
+	#accordion { margin:100px auto; width:800px; }
+	#accordion ul { list-style:none; margin:0; padding:0; }
+	.accordion { display:none; }
+	.accordion:target { display:block; }
+	#accordion ul li a { text-decoration:none; display:block; padding:10px; }
+	.accordion{padding:4px;}
+	span.no-underline:hover { text-decoration: none !important; }
+
+	/*  Colors 
+	====================*/
+	#accordion ul {
+	/*box-shadow*/
+	-webkit-box-shadow:0 4px 10px #BDBDBD;
+	   -moz-box-shadow:0 4px 10px #BDBDBD;
+			box-shadow:0 4px 10px #BDBDBD;
+	/*border-radius*/
+	-webkit-border-radius:5px;
+	   -moz-border-radius:5px;
+			border-radius:5px;
+	}
+	#accordion ul li a{
+	background: #F5F5F5;
+	border-bottom:1px solid #E0E0E0;
+	color: #333;
+	}
+	.accordion{
+	background:#fdfdfd;
+	color: #999;
+	}
+	.accordion:target{
+	border-top:3px solid #FFCDCD;
+	}
+	div.accordion ul li a {
+		background: #fff !important;
+	}
+	div.accordion ul li a:hover {
+		text-decoration: underline !important;
+	}
+
+</style>
+
+<div id="menu"></div>
+
+<p><span style="text-decoration: underline;"><strong>Proposal Development </strong></span><br /><br /></p>
+<p><strong>Important</strong></p>
+<p>All Proposals, Internal Processing forms and Release Time Request forms are due in our office 10 days prior to the due date to allow time for approval and signatures from the Provost and the Office of Business and Finance prior to submission.&nbsp; Please call or email our office if you have any questions when completing the forms or the proposal application.</p>
+<p><strong>Important Proposal Numbers:</strong></p>
+<p><strong>EIN #:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56-1238736<br /><br />DUNS#:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;067188979</strong></p>
+<p><strong>Congressional District: NC-004</strong></p>
+
+<div id="accordion">
+	<ul>
+		<li>
+			<a href="#one">Documents Requested by Funding Sources for Proposals</a>
+			<div id="one" class="accordion">
+				<ul>
+					<li><a href="http://www.northcarolina.edu/uncfsu/trustees.php">Board of Trustees Information</a></li>
+					<li><a href="documents/research/budget-irstaxexempt.pdf">I.R.S.Tax Exemption Letter  [PDF]</a></li>
+					<li><a href="Documents/Research/PreAwards/IndirectCostRateAgreement.pdf">DHHS [PDF]  -  F&amp;A (Facilities and Administrative) Cost Rate Letter</a> </li>
+					<li><a href="documents/chancellor/fsuOrgChart.pdf">Organizational Chart for Fayetteville State University  [PDF]</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#two">FSU Facts</a>
+			<div id="two" class="accordion">
+				<ul>
+					<li><a href="x4920.xml">Fact Sheets provided by the Office of Institutional Research</a></li>
+					<li><a href="http://www.uncfsu.edu/ir/fsu-statistics/current-statistics">Current FSU Statistics provided by the Office of Institutional Research</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#three">Proposal Writing Resources</a>
+			<div id="three" class="accordion">
+				<ul>
+					<li><a href="documents/research/form-FSU-Intent.doc">Intent to Submit Form [MS Word] -- (Submit to Sponsored Research and Programs Office)</a></li>
+					<li><a href="documents/research/internal-processing-form.pdf">Internal Processing Form [PDF] <br /> <span class="no-underline">(All proposals must be received in the Office of Sponsored Research and Programs 10 (ten) days prior to the due date of proposal). Proposals must be approved by the director of Sponsored Research and Programs and the Provost and Vice Chancellor of Academic Affairs prior to submission to the funding agency. The Office of Sponsored Research and Programs will submit a hard copy of your proposal for approval.</span></a></li>
+					<li><a href="https://www.cfda.gov/?static=grants&amp;s=generalinfo&amp;mode=list&amp;tabmode=list">Catalog of Federal Domestic Assistance: Developing and Writing Grant Proposals -- (Oriented to projects rather than research)</a> </li>
+				</ul>
+			</div>
+		</li>
+
+		<li>
+			<a href="#collapse4">Science and Engineering</a>
+			<div id="collapse4" class="accordion">
+				<ul>
+					<li><a href="http://www.epa.gov/ogd/grants/how_to_apply.htm">EPA Grant-Writing Tutorial -- (Brief grant writing tips, a mock grant writing activity, and a helpful glossary as well as EPA-specific program information and forms.)</a></li>
+					<li><a href="http://nccam.nih.gov/grants/resources/grantwrite-advice.htm">Quick Guide for the Preparation of Grant Applications -- (from the National Center for Complementary and Alternative Medicine)</a></li>
+					<li><a href="http://www.nigms.nih.gov/Research/Application/Tips.htm">Tips for New NIH Grant Applicants</a></li>
+					<li><a href="http://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf9891">NSF Guide for Proposal Writing -- A comprehensive guide to writing&nbsp;a grant proposal to the National Science Foundation.</a></li>
+					<li><a href="http://www.nsf.gov/pubs/policydocs/pappguide/nsf10_1/gpgprint.pdf" target="_self">NSF Guide Proposal and Award Policies and Procedure Guide</a></li>
+					<li><a href="http://www.niaid.nih.gov/ncn/grants/default.htm">"All About Grants" Tutorials -- (from the National Institute of Allergy and Infectious Diseases)</a></li>
+					<li><a href="http://www.hfsp.org/funding/art-grantsmanship">The Art of Grantsmanship -- (Dr. Jacob Kraicer)</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse5">Social Sciences</a>
+			<div id="collapse5" class="accordion">
+			<ul>
+				<li><a href="http://www.ssrc.org/publications/view/7A9CB4F4-815F-DE11-BD80-001CC477EC70/">The Art of Writing Proposals -- (Social Science Research Council)</a></li>
+				<li><a href="http://www.irss.unc.edu/content/pdf/granthandout.pdf">Finding Funding and Proposal Writing for Faculty and Graduate Students in the Social Sciences [PDF]  -- (Odum Institute)</a></li>
+			</ul>
+		</li>
+		
+		<li>
+			<a href="#collapse6">Sample Grants</a>
+			<div id="collapse6" class="accordion">
+				<ul>
+					<li><a href="http://www.tgcigrantproposals.com/proposals/index.html">TGCI's Winning Grant Proposals Online -- (Sample successful proposals)</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse7">Electronic Submission</a>
+			<div id="collapse7" class="accordion">
+				<ul>
+					<li><a href="http://era.nih.gov/">NIH Electronic Research Administration</a></li>
+					<li><a href="https://www.fastlane.nsf.gov/">National Science Foundation FastLane</a></li>
+					<li><a href="http://www.grants.gov/">Grants.gov</a></li>
+					<li><a href="http://www.grants.gov/">U.S. Department of Education </a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse8">FSU Graduate School Faculty Grants</a>
+			<div id="collapse8" class="accordion">
+				<ul>
+					<li><a href="http://www.uncfsu.edu/graduateschool/faculty-development">Faculty Development Funding Opportunity</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse9">Federal Funding Sources Listing</a>
+			<div id="collapse9" class="accordion">
+				<ul type="disc">
+					<li><a href="http://www.grants.gov/search/search.do?mode=Search&amp;dates=7&amp;docs1=doc_open_checked">New Funding Opportunities </a></li>
+					<li><a href="http://www.grants.gov/">Grants.gov</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse10">Funding Sources</a>
+			<div id="collapse10" class="accordion">
+				<ul type="disc">
+					<li><a href="http://www.fftc.org/">Foundation For The Carolinas</a></li>
+					<li><a href="http://www.duke-energy.com/community/foundation/online-grant-application.asp">Duke Energy Foundation</a></li>
+					<li><a href="http://www.cumberlandcf.org/">Cumberland Community Foundation</a></li>
+					<li><a href="http://ajf.org/">A. J. Fletcher Foundation</a></li>
+					<li><a href="http://www.mrbf.org/">Mary Reynolds Babcock Foundation</a></li>
+					<li><a href="http://www.zsr.org/">Z. Smith Reynolds Foundation</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse11">A Partial List of Funding Sources</a>
+			<div id="collapse11" class="accordion">
+				<ul type="disc">
+					<li><a href="javascript:void(0)">City of Fayetteville, North Carolina</a></li>
+					<li><a href="javascript:void(0)">Coke Cola Foundation</a></li>
+					<li><a href="javascript:void(0)">Corporation for Public Broadcasting</a></li>
+					<li><a href="javascript:void(0)">Educational Testing Service</a></li>
+					<li><a href="javascript:void(0)">NASA</a></li>
+					<li><a href="javascript:void(0)">National Institutes of Health</a></li>
+					<li><a href="javascript:void(0)">National Science Foundation</a></li>
+					<li><a href="javascript:void(0)">National Youth Sports Program</a></li>
+					<li><a href="javascript:void(0)">North Carolina Biotechnology</a></li>
+					<li><a href="javascript:void(0)">North Carolina Department of Environment</a></li>
+					<li><a href="javascript:void(0)">North Carolina Department of Public Instruction</a></li>
+					<li><a href="javascript:void(0)">North Carolina Humanities Council</a></li>
+					<li><a href="javascript:void(0)">Time-Warner Cable</a></li>
+					<li><a href="javascript:void(0)">University of New Mexico</a></li>
+					<li><a href="javascript:void(0)">University of North Carolina-Chapel Hill</a></li>
+					<li><a href="javascript:void(0)">University of Tennessee at Knoxville</a></li>
+					<li><a href="javascript:void(0)">U.S. Army Research Office</a></li>
+					<li><a href="javascript:void(0)">U.S. Department of Education</a></li>
+					<li><a href="javascript:void(0)">U.S. Department of Energy</a></li>
+					<li><a href="javascript:void(0)">U.S. Department of Housing and Urban Development</a></li>
+					<li><a href="javascript:void(0)">Z. Smith Reynolds Foundation</a></li>
+					<li><a href="http://www.grantproposal.info/inquiry.html">Grant Proposal.com</a></li>
+					<li><a href="http://philanthropy.com/">The Chronicle of Philanthropy</a></li>
+				</ul>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#collapse12">Grant Sources</a>
+			<div id="collapse12" class="accordion">
+				<ul type="disc">
+					<li><a href="http://airforcesmallbiz.org/opportunities/index.php">Air Force Small Business Online</a></li>
+					<li><a href="http://www.cfda.gov/">Catalog of Federal Domestic Assistance (CFDA)</a></li>
+					<li><a href="http://find.ed.gov/search?q=inurl%3Aprograms&amp;partialfields=(dc%252Etype:Program+Home+Page).(dc%252DED%252Eaudience:Institutions+of+Higher+Education).(-ED%252Estatus:archived)&amp;site=default_collection&amp;client=default_frontend&amp;output=xml_no_dtd&amp;proxystylesheet=default_frontend">Guide to U.S. Department of Education Programs and Resources</a></li>
+					<li><a href="http://www.hhs.gov/grants/grants/index.html">U.S. Dept. of&nbsp; Health &amp; Human Services</a></li>
+					<li><a href="http://www.acf.hhs.gov/grants">U.S. Dept. of Health &amp; Human Services Administration for Children and Families</a></li>
+					<li><a href="http://www.hrsa.gov/grants/index.html">Health Resources and Services Administration (HRSA) Open Opportunities</a></li>
+					<li><a href="http://www.nih.gov/">National Institutes of Health (NIH)</a></li>
+					<li><a href="http://www.acq.osd.mil/osbp/sbir/">Department of Defense: Small Business Innovation Research/Small Business Technology Transfer SBIR/STTR</a></li>
+					<li><a href="http://portal.hud.gov/hudportal/HUD?src=/topics/grants">U.S. Department of Housing and Urban Development (HUD)</a></li>
+					<li><a href="http://www.ntia.doc.gov/office/OTIA">The Technology Opportunities Program&nbsp;- National Telecommunications &amp; Information Administration</a></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
